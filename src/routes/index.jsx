@@ -16,19 +16,21 @@ const index = () => {
         }
       >
         <Header />
-        <Switch>
-          <PublicRoute
-            exact
-            path={`${process.env.PUBLIC_URL}/`}
-            component={home}
-          />
+        <main className="main_page">
+          <Switch>
+            <PublicRoute
+              exact
+              path={`${process.env.PUBLIC_URL}/`}
+              component={home}
+            />
 
-          <PublicRoute
-            exact
-            path={`${process.env.PUBLIC_URL}/gen-bill`}
-            component={bill}
-          />
-        </Switch>
+            <PublicRoute
+              exact
+              path={`${process.env.PUBLIC_URL}/gen-bill`}
+              component={bill}
+            />
+          </Switch>
+        </main>
       </Suspense>
     </Router>
   );

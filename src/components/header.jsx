@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../assets/images/logo_b.png';
 
-const header = () => {
+const Header = () => {
+    
+    const [nav, setNav] = useState(false);
+
     return (
         <header>
-            <nav>
-                <div className="navbar-brand">
-                    <img src="" alt="" />
-                </div>
-                <div className="menu-btn">
-                    <button className="menu-toggler"></button>
+            <nav className="nav">
+                <div className="nav-brand">
+                    <img src={logo} alt="" />
                 </div>
                 <div className="nav-menu">
-                    <ul className="nav-list">
+                    <div className="nav-btn">
+                        <button className={`${nav === true ? ` open ` : ` `} nav-toggler `} onClick={() => setNav(!nav)}>
+                            <span className="line"></span>
+                            <span className="line"></span>
+                            <span className="line"></span>
+                        </button>
+                    </div>
+                    <ul className={`${nav === true ? ` open ` : ` `} nav-list `}>
                         <li className="nav-item">
                             <Link to="/" className="nav-link">
                                 Home
@@ -30,4 +38,4 @@ const header = () => {
     )
 }
 
-export default header;
+export default Header;

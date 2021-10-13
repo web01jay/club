@@ -1,0 +1,76 @@
+// responsive mixin
+@mixin mediaResponsive($breakpoint) {
+    @if $breakpoint == "xxxxl" {
+      @media (min-width: 1500px) {
+        @content;
+      }
+    } @else if $breakpoint == "xxxl" {
+      @media (min-width: 1366px) {
+        @content;
+      }
+    } @else if $breakpoint == "xxl" {
+      @media (min-width: 1200px) {
+        @content;
+      }
+    } @else if $breakpoint == "xl" {
+      @media (max-width: 1200px) {
+        @content;
+      }
+    } @else if $breakpoint == "mLg" {
+      @media only screen and (min-width: 992px) and (max-width: 1024px) {
+        @content;
+      }
+    } @else if $breakpoint == "lg" {
+      @media (max-width: 991px) {
+        @content;
+      }
+    } @else if $breakpoint == "md" {
+      @media (max-width: 767px) {
+        @content;
+      }
+    } @else if $breakpoint == "sm" {
+      @media (max-width: 575px) {
+        @content;
+      }
+    } @else if $breakpoint == "xs" {
+      @media (max-width: px) {
+        @content;
+      }
+    }
+  }
+  
+  @mixin absoluteCenter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @mixin gridCenter {
+    display: grid;
+    place-content: center;
+  }
+  @mixin container {
+    margin: 0 auto;
+    @include mediaResponsive(sm) {
+      max-width: 90vw;
+    }
+    @include mediaResponsive(md) {
+      max-width: 570px;
+    }
+    @include mediaResponsive(lg) {
+      max-width: 767px;
+    }
+    @include mediaResponsive(mLg) {
+      max-width: 90vw;
+    }
+    @include mediaResponsive(xl) {
+      max-width: 1024px;
+    }
+    @include mediaResponsive(xxl) {
+      max-width: 1140px;
+    }
+    @include mediaResponsive(xxxxl) {
+      max-width: 1490px;
+    }
+  }

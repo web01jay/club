@@ -1,0 +1,137 @@
+.text-red {
+  color: #ef4a4f !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-black {
+  color: #000000 !important;
+}
+
+.text-light-green {
+  color: #a8cf45 !important;
+}
+
+.text-dark-green {
+  color: #4baf50 !important;
+}
+
+.text-white-green {
+  color: #f9fcf2 !important;
+}
+
+.text-grey {
+  color: #888888 !important;
+}
+
+.text-dark-grey {
+  color: #767676 !important;
+}
+
+.text-light-grey {
+  color: #cbcbcb !important;
+}
+
+.bg-red {
+  background-color: #ef4a4f !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-black {
+  background-color: #000000 !important;
+}
+
+.bg-light-green {
+  background-color: #a8cf45 !important;
+}
+
+.bg-dark-green {
+  background-color: #4baf50 !important;
+}
+
+.bg-white-green {
+  background-color: #f9fcf2 !important;
+}
+
+.bg-grey {
+  background-color: #888888 !important;
+}
+
+.bg-dark-grey {
+  background-color: #767676 !important;
+}
+
+.bg-light-grey {
+  background-color: #cbcbcb !important;
+}
+
+.hamburger {
+  background-color: transparent;
+  border: none !important;
+}
+.hamburger .line {
+  width: 30px;
+  height: 2px;
+  background-color: #a8cf45;
+  display: block;
+  margin: 6px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 575px) {
+  .hamburger .line {
+    height: 2px;
+    width: 30px;
+  }
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.hamburger.open .line:nth-child(1) {
+  -webkit-transform: translateY(3px) rotate(45deg);
+  -ms-transform: translateY(3px) rotate(45deg);
+  -o-transform: translateY(3px) rotate(45deg);
+  transform: translateY(3px) rotate(45deg);
+}
+.hamburger.open .line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse.show {
+    background-color: #fff;
+    height: calc(100vh - 86px);
+  }
+}
+@media (max-width: 575px) {
+  .navbar-collapse.show {
+    height: calc(100vh - 57.31px);
+  }
+}
+
+header {
+  width: 100vw;
+}
+header .nav {
+  max-width: 1149px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  padding: 0.25rem;
+}
+header .nav-brand img {
+  max-width: 200px;
+  object-fit: contain;
+}

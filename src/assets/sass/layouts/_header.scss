@@ -1,0 +1,54 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+header{
+    width: 100vw;
+    .nav{
+        @include container;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: .25rem;
+        &-brand{
+            img{
+                max-width: 200px;
+                object-fit: contain;
+            }
+        }
+        &-menu{
+            margin-left: auto;
+        }
+        &-toggler{
+            display: none;
+            @include mediaResponsive(lg) {
+                display: block;
+            }
+        }
+        &-list {
+            padding-left: 0;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            @include mediaResponsive(lg) {
+                display: none;
+                &.open{
+                    display: block;
+
+                    width: 100%;
+                    height: calc(100vh - 50px);
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $white;
+                }
+            }
+        }
+        &-item{position: relative;}
+        &-link {
+            position: relative;
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            font-size: .90rem;
+            color: $red;
+        }
+    }
+}
