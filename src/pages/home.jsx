@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
 import { LoginApi } from "../axios/helper";
 
 const SigninSchema = Yup.object().shape({
@@ -29,10 +28,10 @@ const home = () => {
           {({ errors, touched }) => (
             <Form>
               <Field name="email" type="email" placeholder="Email" />
-              {errors.email && touched.email ? <div>{errors.email}</div> : null}
+              {errors.email && touched.email ? <span>{errors.email}</span> : null}
               <Field name="password" type="password" placeholder="Password" />
               {errors.password && touched.password ? (
-                <div>{errors.password}</div>
+                <span>{errors.password}</span>
               ) : null}
               <button type="submit">Submit</button>
             </Form>
