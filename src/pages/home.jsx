@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
-import { LoginApi } from "../axios/helper";
+import { SignUp } from "../axios/helper";
 
 const SigninSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
@@ -10,7 +10,8 @@ const SigninSchema = Yup.object().shape({
     .min(8, "Password is too short - should be 8 chars minimum"),
 });
 
-const home = () => {
+const Home = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
   return (
     <>
       <div>
@@ -21,9 +22,20 @@ const home = () => {
             password: "",
           }}
           validationSchema={SigninSchema}
-          onSubmit={(values) => {
-            LoginApi(values.email, values.password);
-          }}
+          onSubmit={
+            async (values) => {
+              setIsSubmitting(true)
+              try{
+                const result = await SignUp(values.email, values.password);
+                if(result && result.user.accessToken){
+                  alert('user created')
+                }    
+              }catch(e){
+                console.log(e.message)
+              }
+              setIsSubmitting(false)
+            }            
+          }
         >
           {({ errors, touched }) => (
             <Form>
@@ -42,4 +54,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
